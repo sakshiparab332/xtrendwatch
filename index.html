@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XTrendWatch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="logo">X<span>Trend</span>Watch</a>
+        <div class="menu-trigger" onclick="toggleMenu()">☰</div>
+        <div class="menu">
+            <a onclick="showWorldwide()">Worldwide</a>
+            <a onclick="showTrending()">Trending</a>
+            <select id="country-select" onchange="fetchCountryTrends()">
+                <option value="">Select Country</option>
+                <option value="US">United States</option>
+                <option value="IN">India</option>
+                <option value="UK">United Kingdom</option>
+            </select>
+            <a href="help.html" target="_blank">Help</a>
+        </div>
+        <div class="toggle-icons">
+            <i class="fa fa-moon" id="moon-icon" onclick="toggleDarkMode()"></i>
+            <i class="fa fa-sun" id="sun-icon" onclick="toggleDarkMode()" style="display:none;"></i>
+        </div>
+    </div>
+    <div class="container" id="content">
+        <div class="ribbon">Following are the list of today's top twitter trending topics in India. Twitter Trends last updated 27 minutes ago</div>
+        <h1>India X Trends</h1>
+        <ul id="trends-list"></ul>
+    </div>
+    <div class="card-body remote-tab-container">
+        <header>
+            <h1>Top Hashtags</h1>
+            <a href="help.html" class="help-link" target="_blank">How it's calculated?</a>
+        </header>
+        <nav class="tabs-nav">
+            <div class="tab-group">
+                <button class="tab-link active" data-tab="most-tweeted" onclick="switchTab('most-tweeted')">Most Tweeted</button>
+                <button class="tab-link" data-tab="longest-trending" onclick="switchTab('longest-trending')">Longest Trending</button>
+            </div>
+            <div class="tab-group">
+                <button class="tab-link active" onclick="switchTimeframe('24h')">24 Hours</button>
+                <button class="tab-link" onclick="switchTimeframe('7d')">7 Days</button>
+                <button class="tab-link" onclick="switchTimeframe('30d')">30 Days</button>
+                <button class="tab-link" onclick="switchTimeframe('year')">Year</button>
+            </div>
+        </nav>
+        <section class="trending-list">
+            <h2 class="tab-title">Most Tweeted Hashtags (Last 24 Hours)</h2>
+            <table id="most-tweeted-table">
+                <!-- Table rows will be dynamically populated -->
+            </table>
+            <button class="see-all-btn">See All</button>
+        </section>
+        <section class="placeholder-content">
+            <p>Loading weekly, monthly, and yearly trends...</p>
+        </section>
+    </div>
+    <footer class="twittertrendwatch-footer">
+        <div class="container">
+            <div class="twittertrendwatch-footer-top">
+                <ul class="country-selector">
+                    <li>
+                        <a href="#" aria-label="Select Country" class="country-link">
+                            India | <span lang="en">en</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="twittertrendwatch-footer-middle">
+                <div class="twittertrendwatch-footer-copyright">
+                    <p class="twittertrendwatch-footer-copyright-text">
+                        &copy; 2024 XTrendWatch India. All rights reserved.
+                    </p>
+                    <p class="twittertrendwatch-footer-copyright-text">
+                        &copy; 2024 XTrendWatch.
+                    </p>
+                </div>
+            </div>
+            <div class="twittertrendwatch-footer-logo">
+                <a href="#" class="logo">X<span>Trend</span>Watch</a>
+            </div>
+            <div class="twittertrendwatch-footer-social">
+                <ul class="social-links">
+                    <li>
+                        <a href="https://facebook.com/twittertrendwatch" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://pinterest.com/twittertrendwatch" target="_blank" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/twittertrendwatch" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://youtube.com/twittertrendwatch" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                  
+                    <li>
+                        <a href="https://twitter.com/twittertrendwatch" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

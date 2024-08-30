@@ -1,0 +1,456 @@
+ 
+
+@import url('https://fonts.googleapis.com/css2?family=Euclid+Light&display=swap');
+
+
+
+body {
+    font-family: 'Euclid-Light', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #E7E9EA;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s, color 0.3s;
+}
+.container {
+    padding: 20px;
+    position: relative;
+}
+h1 {
+    text-align: center;
+    font-size: 28px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 16px;
+}
+li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.ribbon {
+    position: relative;
+    z-index: 1;
+    background-color: #4b8bd4;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2F2F2F;
+    padding: 10px 20px;
+    position: relative;
+    height: 59px;
+    box-shadow: 0 4px 6px rgba(173, 216, 230, 0.5);
+}
+.navbar .logo {
+    color: #fff;
+    font-size: 27px;
+    font-family: 'ITC Novarese Medium', sans-serif;
+    text-decoration: none;
+    margin: 0 8px;
+    padding: 0 8px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.navbar .logo span {
+    color: #4b8bd4;
+}
+.navbar .menu {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+.navbar .menu a,
+.navbar .menu select {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 8px;
+    padding: 0 8px;
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+.navbar .menu a:hover,
+.navbar .menu select:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+.navbar .menu select {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3), 0 4px 6px rgba(75, 139, 212, 0.5);
+    transition: box-shadow 0.3s;
+}
+.navbar .menu select:hover {
+    box-shadow: 0 6px 8px rgba(255, 255, 255, 0.4), 0 6px 8px rgba(75, 139, 212, 0.7);
+}
+.navbar .menu-trigger {
+    display: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjusted margin for search icon */
+}
+.search-bar button i {
+    margin-right: 10px; /* Increased margin for space */
+}
+.toggle-icons {
+    display: flex;
+    align-items: center;
+}
+.toggle-icons i {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: auto;
+    }
+    .navbar .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 3;
+        margin: 10px 0;
+    }
+    .navbar .menu a,
+    .navbar .menu select {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #575757;
+        margin: 0;
+    }
+    .navbar .menu-trigger {
+        display: block;
+        order: 2;
+        margin-left: 0;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .navbar .menu a,
+    .navbar .menu select {
+        opacity: 0;
+    }
+    .navbar:hover .menu a,
+    .navbar:hover .menu select {
+        opacity: 1;
+    }
+    .search-bar {
+        margin-right: 10px; /* Adjust spacing as needed */
+    }
+    .toggle-icons {
+        margin-left: auto; /* Push icons to the right */
+        margin-right: 10px; /* Adjust spacing between icons */
+    }
+    .toggle-icons i {
+        margin-left: 10px; /* Add space between search icon and moon icon */
+    }
+}
+.navbar .menu.active {
+    display: flex;
+/* Default styles for light mode */
+}
+/* Styles for dark mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #E7E9EA;
+}
+
+/* Additional style for <h1> in dark mode */
+body.dark-mode h1 {
+    color: #E7E9EA; /* Change to desired color for dark mode */
+}
+
+/* Light mode <h1> styles */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #000; /* Ensure h1 is black in light mode */
+}
+
+/* Other existing styles */
+.container {
+    padding: 20px;
+    position: relative;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 16px;
+}
+li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.ribbon {
+    position: relative;
+    z-index: 1;
+    background-color: #4b8bd4;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Other styles remain unchanged */
+
+
+
+
+
+
+
+
+
+
+
+
+.card-body {
+padding: 20px;
+position: relative;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+margin: 20px;
+}
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+header h1 {
+font-size: 28px;
+}
+
+.tabs-nav {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.tab-group {
+display: flex;
+}
+
+.tab-link {
+background: none;
+border: none;
+cursor: pointer;
+padding: 10px 20px;
+font-size: 16px;
+color: #4b8bd4;
+transition: color 0.3s;
+}
+
+.tab-link.active {
+color: #000;
+font-weight: bold;
+}
+
+.trending-list {
+margin-bottom: 20px;
+}
+
+.tab-title {
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 10px;
+}
+
+table th, table td {
+padding: 10px;
+border-bottom: 1px solid #ccc;
+text-align: left;
+}
+
+.see-all-btn {
+background-color: #4b8bd4;
+color: #fff;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 5px;
+font-size: 16px;
+transition: background-color 0.3s;
+}
+
+.see-all-btn:hover {
+background-color: #357ebd;
+}
+
+.placeholder-content {
+text-align: center;
+opacity: 0.5;
+font-style: italic;
+}
+
+/* Media query for smaller devices */
+
+@media (max-width: 768px) {
+.card-body {
+padding: 15px; /* Adjusted padding for smaller devices */
+margin: 10px; /* Adjusted margin for smaller devices */
+}
+}
+
+
+
+
+
+
+/* Unique Footer Styles */
+
+
+.twittertrendwatch-footer-social {
+text-align: center;
+}
+
+.twittertrendwatch-footer-social .social-links {
+list-style-type: none;
+padding: 0;
+}
+
+.twittertrendwatch-footer-social .social-links li {
+display: inline-block;
+margin-right: 10px;
+}
+
+.twittertrendwatch-footer-social .social-links li:last-child {
+margin-right: 0;
+}
+
+.twittertrendwatch-footer-social .social-links li a {
+color: #fff;
+font-size: 20px;
+}
+
+
+
+
+
+
+.twittertrendwatch-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Euclid Light', sans-serif;
+}
+
+.twittertrendwatch-footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.twittertrendwatch-footer .social-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.twittertrendwatch-footer .social-links li {
+    font-size: 1.5rem;
+}
+
+.twittertrendwatch-footer .social-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.twittertrendwatch-footer .social-links a:hover {
+    color: #8DBAED;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .menu-trigger {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+}
+.twittertrendwatch-footer-logo {
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.twittertrendwatch-footer-logo .logo {
+    color: #fff; /* Text color */
+    font-size: 24px; /* Adjust font size */
+    font-family: 'ITC Novarese Medium', sans-serif; /* Use the same font family as navbar */
+    text-decoration: none;
+    padding: 5px 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Optional: add text shadow */
+}
+
+.twittertrendwatch-footer-logo .logo span {
+    color: #4b8bd4; /* Span color */
+}
+.country-link {
+    color: #fff;
+}
+@media screen and (max-width: 768px) {
+    .remote-tab-container .tab-group:nth-child(2) .tab-link:nth-child(3),
+    .remote-tab-container .tab-group:nth-child(2) .tab-link:nth-child(4) {
+        display: none;
+    }
+}
+
+
+
+
+
